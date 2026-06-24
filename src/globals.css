@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+}
+
+
+:root {
+  --polen-dark: #0f1f3d;
+  --polen-blue: #1d4c8f;
+  --polen-soft: #f3f6fc;
+  --muted: #64748b;
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #0f172a;
+}
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(29, 76, 143, 0.2);
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 20px 45px rgba(15, 31, 61, 0.08);
+  }
+  .btn-focus:focus {
+    box-shadow: 0 6px 18px rgba(29,76,143,0.12);
+    transform: translateY(-1px);
+  }
+}
