@@ -191,7 +191,7 @@ export default function Footer() {
         {/* ALT ŞERİT */}
         <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-[#1D1D1D] pt-8 md:flex-row text-[#666666]">
           <p className="text-[12px] font-light tracking-wide">
-            &copy; {new Date().getFullYear()} {data.title}. {data.ui.footer.rights}
+            &copy; {new Date().getFullYear()} {data.title} {data.ui.footer.rights}
           </p>
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#444444]">
             {data.ui.footer.tagline}

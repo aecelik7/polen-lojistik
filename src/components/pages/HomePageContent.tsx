@@ -15,17 +15,17 @@ export default function HomePageContent({ data = site, locale = "tr" }: HomePage
   const copy = data.ui.home;
 
   return (
-    <main className="bg-[#111111] text-white">
+    <main className="overflow-x-hidden bg-[#111111] text-white">
       
       {/* HERO BÖLÜMÜ */}
       <Hero data={data} locale={locale} />
 
       {/* 1. SEKTÖR: HAKKIMIZDA (SİYAH ZEMİN - Değişmedi) */}
-      <section className="py-32 border-b border-[#242424] bg-[#0A0A0A]">
+      <section className="border-b border-[#242424] bg-[#0A0A0A] py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-[85rem] px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
             
-            <div className="lg:col-span-5 sticky top-32">
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C90606]">
                   {copy.aboutLabel}
@@ -50,7 +50,7 @@ export default function HomePageContent({ data = site, locale = "tr" }: HomePage
               </Link>
             </div>
 
-            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-[#242424] border border-[#242424]">
+            <div className="grid grid-cols-1 gap-px border border-[#242424] bg-[#242424] sm:grid-cols-2 lg:col-span-7">
               {data.whyPolen.map((reason, index) => (
                 <div key={reason} className="bg-[#111111] p-10 relative group hover:bg-[#161616] transition-colors duration-500">
                   <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#C90606] transition-all duration-500 group-hover:w-full" />
@@ -69,9 +69,9 @@ export default function HomePageContent({ data = site, locale = "tr" }: HomePage
       </section>
 
       {/* 2. SEKTÖR: HİZMETLER (BEYAZ ZEMİN ÜZERİNE DEV KIRMIZI KARTLAR) */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
         {/* Beyaz zemin üzerine çok hafif endüstriyel çizgiler */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 1px, transparent 10px)' }} />
+        <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 1px, transparent 10px)' }} />
 
         <div className="relative z-10 mx-auto max-w-[85rem] px-6 lg:px-12">
           
@@ -98,7 +98,7 @@ export default function HomePageContent({ data = site, locale = "tr" }: HomePage
           </div>
 
           {/* Bembeyaz zemin üzerinde KAN KIRMIZISI KARTLAR */}
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {data.services.slice(0, 3).map((service, index) => (
               <div key={service.title} className="bg-[#C90606] p-12 relative group shadow-2xl hover:-translate-y-2 hover:bg-[#111111] transition-all duration-500">
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-white/20 group-hover:bg-[#C90606] transition-colors duration-500" />

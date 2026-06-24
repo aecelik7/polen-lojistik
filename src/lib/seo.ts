@@ -7,9 +7,21 @@ import {
   type PageKey,
 } from "@/lib/i18n";
 
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://polenlojistik.com"
-).replace(/\/+$/, "");
+const defaultSiteUrl = "https://polenlojistik.com.tr";
+const legacySiteHostname = new URL(defaultSiteUrl).hostname.replace(/\.tr$/i, "");
+
+function normalizeSiteUrl(url: string): string {
+  const normalizedUrl = url.replace(/\/+$/, "");
+
+  try {
+    const hostname = new URL(normalizedUrl).hostname.replace(/^www\./i, "");
+    return hostname === legacySiteHostname ? defaultSiteUrl : normalizedUrl;
+  } catch {
+    return normalizedUrl;
+  }
+}
+
+export const siteUrl = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL || defaultSiteUrl);
 
 export const siteName = "Polen Antrepoculuk ve Lojistik A.Ş.";
 export const ogImagePath = "/images/og/polen-og.jpg";
